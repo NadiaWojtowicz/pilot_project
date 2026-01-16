@@ -1,0 +1,16 @@
+"node","topic","sentiment","opinion"
+"topic_1_neutral",1,"neutral",0
+"topic_4_negative",4,"negative",-1
+"topic_1_positive",1,"positive",1
+"topic_3_neutral",3,"neutral",0
+"topic_9_positive",9,"positive",1
+"topic_1_negative",1,"negative",-1
+"topic_7_negative",7,"negative",-1
+"topic_9_negative",9,"negative",-1
+"topic_10_neutral",10,"neutral",0
+"topic_2_neutral",2,"neutral",0
+"topic_5_negative",5,"negative",-1
+"topic_2_negative",2,"negative",-1
+"topic_8_neutral",8,"neutral",0
+"topic_9_neutral",9,"neutral",0
+"topic_3_positive",3,"positive",1
