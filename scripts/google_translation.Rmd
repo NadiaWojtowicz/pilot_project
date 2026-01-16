@@ -17,7 +17,7 @@ library(dplyr)
 ```
 
 ```{r}
-GOOGLE_API_KEY <- "AIzaSyC_hYjHMEqCh3kr8_l8JMMvTineh0Uydfs"
+GOOGLE_API_KEY <- ""
 
 ```
 
