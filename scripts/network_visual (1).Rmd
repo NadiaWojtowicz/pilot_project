@@ -1,0 +1,1205 @@
+---
+title: "Untitled"
+output: html_document
+date: "2026-01-04"
+---
+
+```{r}
+#install.packages("jsonlite")
+install.packages("igraph")
+install.packages("ggraph")
+```
+
+
+```{r}
+############################################################
+# ARTICLES TOPIC–SENTIMENT CO-OCCURRENCE NETWORK
+# CREATE NODES AND EDGES FILES
+############################################################
+
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(igraph)
+
+# ==========================================================
+# 1. LOAD DATA
+# ==========================================================
+
+json_path <- "/work/pilot/data/processed/finished_label.json"
+
+raw_data <- fromJSON(
+  readLines(json_path, warn = FALSE),
+  simplifyVector = FALSE
+)
+
+cat("Loaded articles:", length(raw_data), "\n")
+
+# ==========================================================
+# 2. HELPER FUNCTIONS
+# ==========================================================
+
+get_choices <- function(item) {
+  if (!is.null(item$annotations) &&
+      length(item$annotations) > 0 &&
+      !is.null(item$annotations[[1]]$result) &&
+      length(item$annotations[[1]]$result) > 0) {
+    return(unlist(item$annotations[[1]]$result[[1]]$value$choices))
+  }
+  return(NULL)
+}
+
+decode_choice <- function(val) {
+  val <- as.numeric(val)
+  if (is.na(val)) return(NULL)
+
+  sentiment_code <- ((val - 1) %% 3) + 1
+
+  sentiment <- c("negative", "neutral", "positive")[sentiment_code]
+  opinion   <- c(-1, 0, 1)[sentiment_code]
+
+  list(
+    topic = ceiling(val / 3),
+    sentiment = sentiment,
+    opinion = opinion
+  )
+}
+
+# ==========================================================
+# 3. EXTRACT LONG-FORM TABLE
+# ==========================================================
+
+records <- list()
+
+for (i in seq_along(raw_data)) {
+  item <- raw_data[[i]]
+  file <- item$data$file
+  choices <- get_choices(item)
+
+  if (!is.null(choices)) {
+    for (c in choices) {
+      decoded <- decode_choice(c)
+      if (!is.null(decoded)) {
+        records[[length(records) + 1]] <- data.frame(
+          file = file,
+          topic = decoded$topic,
+          sentiment = decoded$sentiment,
+          opinion = decoded$opinion,
+          node = paste0("topic_", decoded$topic, "_", decoded$sentiment),
+          stringsAsFactors = FALSE
+        )
+      }
+    }
+  }
+}
+
+df_long <- bind_rows(records)
+
+cat("Total topic–sentiment annotations:", nrow(df_long), "\n")
+
+# ==========================================================
+# 4. FILTER ARTICLES WITH MULTIPLE NODES
+# ==========================================================
+
+df_multi <- df_long %>%
+  group_by(file) %>%
+  filter(length(unique(node)) > 1) %>%
+  ungroup()
+
+cat(
+  "Articles with multiple nodes:",
+  length(unique(df_multi$file)), "\n"
+)
+
+# ==========================================================
+# 5. BUILD EDGE LIST
+# ==========================================================
+
+edge_accumulator <- list()
+
+files <- unique(df_multi$file)
+
+for (f in files) {
+  nodes <- sort(unique(df_multi$node[df_multi$file == f]))
+
+  if (length(nodes) > 1) {
+    comb <- combn(nodes, 2)
+    for (j in seq_len(ncol(comb))) {
+      edge_accumulator[[length(edge_accumulator) + 1]] <- data.frame(
+        from = comb[1, j],
+        to   = comb[2, j],
+        stringsAsFactors = FALSE
+      )
+    }
+  }
+}
+
+edges <- bind_rows(edge_accumulator)
+
+edges_weighted <- edges %>%
+  count(from, to, name = "weight") %>%
+  mutate(weight_norm = weight / max(weight)) %>%
+  arrange(desc(weight))
+
+cat("Total unique edges:", nrow(edges_weighted), "\n")
+
+# ==========================================================
+# 6. NODE TABLE
+# ==========================================================
+
+nodes <- df_long %>%
+  select(node, topic, sentiment, opinion) %>%
+  distinct()
+
+cat("Total unique nodes:", nrow(nodes), "\n")
+
+# ==========================================================
+# 7. SAVE FILES
+# ==========================================================
+
+write.csv(
+  edges_weighted,
+  "/work/pilot/data/processed/networks/topic_sentiment_edges.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  nodes,
+  "/work/pilot/data/processed/networks/topic_sentiment_nodes.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  df_long,
+  "/work/pilot/data/processed/networks/articles_with_nodes.csv",
+  row.names = FALSE
+)
+
+cat(" Files saved successfully\n")
+
+# ==========================================================
+# 8. NETWORK SUMMARY
+# ==========================================================
+
+g <- graph_from_data_frame(edges_weighted, vertices = nodes, directed = FALSE)
+
+cat("\nARTICLES NETWORK SUMMARY\n")
+cat("========================================\n")
+cat("Nodes:", vcount(g), "\n")
+cat("Edges:", ecount(g), "\n")
+cat("Density:", edge_density(g), "\n")
+cat("Mean edge weight:", mean(E(g)$weight), "\n")
+cat("Max edge weight:", max(E(g)$weight), "\n")
+
+# Show top 10 strongest connections
+cat("\nTop 10 strongest topic-sentiment connections:\n")
+print(head(edges_weighted, 10))
+
+# Show node distribution
+cat("\nNode distribution by sentiment:\n")
+nodes %>%
+  count(sentiment) %>%
+  print()
+
+cat("\nNode distribution by topic:\n")
+nodes %>%
+  count(topic) %>%
+  arrange(topic) %>%
+  print()
+
+```
+```{r}
+############################################################
+# COMPLETE ARTICLES NETWORK VISUALIZATIONS
+# All visualizations in one file
+############################################################
+
+library(igraph)
+library(ggraph)
+library(tidygraph)
+library(tidyverse)
+library(scales)
+
+# ==========================================================
+# LOAD ARTICLES NETWORK DATA
+# ==========================================================
+
+edges <- read.csv(
+  "/work/pilot/data/processed/networks/topic_sentiment_edges.csv",
+  stringsAsFactors = FALSE
+)
+
+nodes <- read.csv(
+  "/work/pilot/data/processed/networks/topic_sentiment_nodes.csv",
+  stringsAsFactors = FALSE
+)
+
+# Build graph object
+g <- graph_from_data_frame(
+  d = edges,
+  vertices = nodes,
+  directed = FALSE
+)
+
+cat("Articles Network Summary:\n")
+cat(" Nodes:", vcount(g), "\n")
+cat(" Edges:", ecount(g), "\n")
+cat(" Density:", edge_density(g), "\n\n")
+
+# ==========================================================
+# VISUAL SETTINGS (USED BY ALL PLOTS)
+# ==========================================================
+
+sentiment_colors <- c(
+  "negative" = "#E74C3C",
+  "neutral"  = "#95A5A6",
+  "positive" = "#2ECC71"
+)
+
+# Node size = frequency
+node_freq <- nodes %>%
+  count(node, name = "freq")
+
+V(g)$freq <- node_freq$freq[match(V(g)$name, node_freq$node)]
+
+# ==========================================================
+# VISUALIZATION 1: FORCE-DIRECTED NETWORK
+# ==========================================================
+
+set.seed(123)
+
+p1 <- ggraph(g, layout = "fr") +
+  geom_edge_link(
+    aes(width = weight_norm, alpha = weight_norm),
+    color = "grey60"
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      size = freq
+    )
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3,
+    color = "black",
+    repel = TRUE
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.3, 3)) +
+  scale_edge_alpha(range = c(0.2, 0.8)) +
+  scale_size_continuous(range = c(3, 10)) +
+  theme_graph() +
+  labs(
+    title = "Articles Topic–Sentiment Co-occurrence Network",
+    subtitle = "Edges = co-occurrence in same article (normalized)",
+    color = "Sentiment",
+    size = "Article frequency"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_network_force.png",
+  p1,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Force-directed network saved\n")
+
+# ==========================================================
+# VISUALIZATION 2: CIRCULAR LAYOUT
+# ==========================================================
+
+p2 <- ggraph(g, layout = "linear", circular = TRUE) +
+  geom_edge_arc(
+    aes(width = weight_norm, alpha = weight_norm),
+    color = "grey60"
+  ) +
+  geom_node_point(
+    aes(color = sentiment),
+    size = 6
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 2.5,
+    vjust = 1.5
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.2, 2)) +
+  scale_edge_alpha(range = c(0.2, 0.7)) +
+  theme_graph() +
+  labs(
+    title = "Articles Topic–Sentiment Network (Circular)",
+    color = "Sentiment"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_network_circular.png",
+  p2,
+  width = 12,
+  height = 12,
+  dpi = 300
+)
+
+cat(" Circular network saved\n")
+
+# ==========================================================
+# VISUALIZATION 3: COMMUNITIES (MEDIA FRAMING CLUSTERS)
+# ==========================================================
+
+communities <- cluster_louvain(g)
+V(g)$community <- membership(communities)
+
+cat("Number of communities detected:", max(V(g)$community), "\n\n")
+
+p3 <- ggraph(g, layout = "fr") +
+  geom_edge_link(
+    aes(width = weight_norm),
+    alpha = 0.3,
+    color = "grey70"
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      shape = as.factor(community)
+    ),
+    size = 6
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3,
+    repel = TRUE
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.3, 3)) +
+  theme_graph() +
+  labs(
+    title = "Articles Topic–Sentiment Communities",
+    subtitle = "Media framing clusters in news coverage",
+    color = "Sentiment",
+    shape = "Structural cluster"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_network_communities.png",
+  p3,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Community network saved\n")
+
+# ==========================================================
+# VISUALIZATION 4: FULL HEATMAP (SYMMETRIC)
+# ==========================================================
+
+# Create symmetric matrix
+matrix_df <- edges %>%
+  select(from, to, weight_norm) %>%
+  bind_rows(
+    # Add reverse direction
+    edges %>%
+      transmute(from = to, to = from, weight_norm = weight_norm)
+  )
+
+# Add diagonal
+all_nodes <- unique(nodes$node)
+diagonal_df <- data.frame(
+  from = all_nodes,
+  to = all_nodes,
+  weight_norm = 1.0
+)
+
+matrix_df <- bind_rows(matrix_df, diagonal_df) %>%
+  distinct(from, to, .keep_all = TRUE)
+
+# Order nodes
+sentiment_order <- c("negative", "neutral", "positive")
+
+node_order <- nodes %>%
+  arrange(topic, match(sentiment, sentiment_order)) %>%
+  pull(node)
+
+matrix_df <- matrix_df %>%
+  mutate(
+    from = factor(from, levels = node_order),
+    to   = factor(to,   levels = node_order)
+  ) %>%
+  filter(!is.na(from) & !is.na(to))
+
+# Plot heatmap
+p4 <- ggplot(matrix_df, aes(x = from, y = to, fill = weight_norm)) +
+  geom_tile(color = "white", linewidth = 0.2) +
+  scale_fill_gradient2(
+    low = "#3B4CC0",
+    mid = "#F7F7F7", 
+    high = "#B40426",
+    midpoint = 0.5,
+    name = "Co-occurrence\nstrength",
+    limits = c(0, 1),
+    breaks = c(0, 0.25, 0.5, 0.75, 1.0)
+  ) +
+  coord_fixed() +
+  theme_minimal(base_size = 10) +
+  theme(
+    axis.text.x = element_text(
+      angle = 90,
+      vjust = 0.5,
+      hjust = 1,
+      size = 7
+    ),
+    axis.text.y = element_text(size = 7),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "Articles Topic–Sentiment Co-occurrence Matrix",
+    subtitle = "Symmetric co-occurrence in news articles (sparse - not all combinations appear)"
+  )
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_network_heatmap.png",
+  p4,
+  width = 14,
+  height = 12,
+  dpi = 300
+)
+
+cat(" Full heatmap saved\n")
+
+# ==========================================================
+# VISUALIZATION 5: PRETTY NETWORK (PUBLICATION-READY)
+# ==========================================================
+
+# Keep meaningful edges (adjust threshold for sparse data)
+edges_clean <- edges %>%
+  filter(weight_norm >= 0.1)
+
+g_clean <- graph_from_data_frame(
+  d = edges_clean,
+  vertices = nodes,
+  directed = FALSE
+)
+
+V(g_clean)$freq <- node_freq$freq[match(V(g_clean)$name, node_freq$node)]
+
+sentiment_colors_clean <- c(
+  "negative" = "#D55E00",
+  "neutral"  = "#999999",
+  "positive" = "#009E73"
+)
+
+set.seed(42)
+
+p5 <- ggraph(g_clean, layout = "stress") +
+  geom_edge_link(
+    aes(
+      width = weight_norm,
+      alpha = weight_norm
+    ),
+    colour = "grey50",
+    show.legend = FALSE
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      size = freq
+    ),
+    alpha = 0.9
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3.5,
+    repel = TRUE,
+    segment.alpha = 0.3
+  ) +
+  scale_color_manual(values = sentiment_colors_clean) +
+  scale_edge_width(range = c(0.4, 3)) +
+  scale_edge_alpha(range = c(0.2, 0.9)) +
+  scale_size_continuous(range = c(4, 10)) +
+  theme_graph(base_family = "sans") +
+  labs(
+    title = "Articles Topic–Sentiment Co-occurrence Network",
+    subtitle = "Media discourse patterns in Aarhus news coverage",
+    color = "Sentiment",
+    size = "Article frequency"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold")
+  )
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_network_pretty.png",
+  p5,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Pretty network saved\n")
+
+# ==========================================================
+# VISUALIZATION 6: TOPIC-LEVEL HEATMAP (10x10, CLEANER)
+# ==========================================================
+
+# Add topic info to edges
+edges_topics <- edges %>%
+  left_join(
+    nodes %>% select(node, topic) %>% rename(from = node, topic_from = topic),
+    by = "from"
+  ) %>%
+  left_join(
+    nodes %>% select(node, topic) %>% rename(to = node, topic_to = topic),
+    by = "to"
+  )
+
+# Aggregate by topic pairs
+topic_matrix <- edges_topics %>%
+  group_by(topic_from, topic_to) %>%
+  summarize(
+    mean_cooccurrence = mean(weight_norm),
+    total_weight = sum(weight),
+    .groups = "drop"
+  )
+
+# Make symmetric
+topic_matrix_full <- topic_matrix %>%
+  bind_rows(
+    topic_matrix %>%
+      transmute(
+        topic_from = topic_to,
+        topic_to = topic_from,
+        mean_cooccurrence = mean_cooccurrence,
+        total_weight = total_weight
+      )
+  ) %>%
+  distinct()
+
+# Add diagonal
+diagonal_topics <- data.frame(
+  topic_from = 1:10,
+  topic_to = 1:10,
+  mean_cooccurrence = 1.0,
+  total_weight = max(topic_matrix_full$total_weight, na.rm = TRUE)
+)
+
+topic_matrix_full <- bind_rows(topic_matrix_full, diagonal_topics) %>%
+  distinct(topic_from, topic_to, .keep_all = TRUE)
+
+# Fill missing with 0 (topics that never co-occurred)
+all_combinations <- expand.grid(
+  topic_from = 1:10,
+  topic_to = 1:10
+)
+
+topic_matrix_complete <- all_combinations %>%
+  left_join(topic_matrix_full, by = c("topic_from", "topic_to")) %>%
+  mutate(
+    mean_cooccurrence = ifelse(is.na(mean_cooccurrence), 0, mean_cooccurrence),
+    total_weight = ifelse(is.na(total_weight), 0, total_weight)
+  )
+
+# Plot topic-level heatmap
+p6 <- ggplot(
+  topic_matrix_complete, 
+  aes(x = factor(topic_from), y = factor(topic_to), fill = mean_cooccurrence)
+) +
+  geom_tile(color = "white", linewidth = 0.5) +
+  geom_text(
+    aes(label = ifelse(mean_cooccurrence > 0, sprintf("%.2f", mean_cooccurrence), "")),
+    size = 3,
+    color = "black"
+  ) +
+  scale_fill_gradient2(
+    low = "#FFFFFF",
+    mid = "#FED976",
+    high = "#B10026",
+    midpoint = 0.5,
+    name = "Mean\nCo-occurrence",
+    limits = c(0, 1)
+  ) +
+  coord_fixed() +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 10),
+    panel.grid = element_blank(),
+    legend.position = "right"
+  ) +
+  labs(
+    x = "Topic",
+    y = "Topic",
+    title = "Articles Topic Co-occurrence Matrix",
+    subtitle = "Which topics appear together in news coverage (white = never co-occur)"
+  )
+
+ggsave(
+  "/work/pilot/data/processed/networks/articles_topic_heatmap.png",
+  p6,
+  width = 10,
+  height = 9,
+  dpi = 300
+)
+
+cat(" Topic-level heatmap saved\n")
+
+# ==========================================================
+# SUMMARY
+# ==========================================================
+
+cat("\n========================================\n")
+cat("ALL VISUALIZATIONS COMPLETE\n")
+cat("========================================\n\n")
+
+cat("Files created:\n")
+cat("1. articles_network_force.png - Force-directed layout\n")
+cat("2. articles_network_circular.png - Circular layout\n")
+cat("3. articles_network_communities.png - Community detection\n")
+cat("4. articles_network_heatmap.png - Full symmetric heatmap (sparse)\n")
+cat("5. articles_network_pretty.png - Clean publication version\n")
+cat("6. articles_topic_heatmap.png - Topic-level 10×10 heatmap\n\n")
+
+
+print(p1)
+print(p2)
+print(p3)
+print(p4)
+print(p5)
+print(p6)
+
+```
+
+
+
+```{r}
+############################################################
+# KANDIDATTEST TOPIC–SENTIMENT CO-OCCURRENCE NETWORK
+# CREATE NODES AND EDGES FILES
+############################################################
+
+library(tidyverse)
+library(igraph)
+
+# ==========================================================
+# 1. LOAD AND CLEAN KANDIDATTEST DATA
+# ==========================================================
+
+# Load kandidattest scraped data
+kandidat_raw <- read.csv("/work/pilot/data/clean/altinget_answers_playwright_271.csv")
+
+
+# Define the 10 topics
+topic_questions <- c(
+  "Q1",  # Topic 1
+  "Q5",  # Topic 2
+  "Q6",   # Topic 3
+  "Q8",  # Topic 4
+  "Q17",   # Topic 5
+  "Q21",  # Topic 6
+  "Q22",   # Topic 7
+  "Q23",  # Topic 8
+  "Q24",   # Topic 9
+  "Q25"   # Topic 10
+)
+
+# Select only relevant questions and remove NA rows
+kandidat_clean <- kandidat_raw %>%
+  select(all_of(topic_questions)) %>%
+  drop_na()
+
+cat("Cleaned kandidat responses:", nrow(kandidat_clean), "candidates\n")
+
+# ==========================================================
+# 2. RECODE SENTIMENTS (MATCH ARTICLE STRUCTURE)
+# ==========================================================
+
+# Recode: -2/-1 → -1 (negative), 0 → 0 (neutral), 1/2 → 1 (positive)
+kandidat_sentiment <- kandidat_clean %>%
+  mutate(across(everything(), ~case_when(
+    . %in% c(-2, -1) ~ -1,
+    . == 0 ~ 0,
+    . %in% c(1, 2) ~ 1,
+    TRUE ~ NA_real_
+  )))
+
+# ==========================================================
+# 3. CREATE LONG-FORM TABLE (SAME AS ARTICLE STRUCTURE)
+# ==========================================================
+
+# Add candidate IDs
+kandidat_sentiment <- kandidat_sentiment %>%
+  mutate(candidate_id = paste0("kandidat_", row_number()))
+
+# Pivot to long format matching your article structure
+df_long <- kandidat_sentiment %>%
+  pivot_longer(
+    cols = all_of(topic_questions),
+    names_to = "question",
+    values_to = "opinion"
+  ) %>%
+  mutate(
+    topic = match(question, topic_questions),  # Topic number 1-10
+    sentiment = case_when(
+      opinion == -1 ~ "negative",
+      opinion == 0 ~ "neutral",
+      opinion == 1 ~ "positive"
+    ),
+    node = paste0("topic_", topic, "_", sentiment)
+  ) %>%
+  select(file = candidate_id, topic, sentiment, opinion, node)
+
+cat("Total topic–sentiment annotations:", nrow(df_long), "\n")
+
+# ==========================================================
+# 4. BUILD EDGE LIST (EACH CANDIDATE = FULLY CONNECTED)
+# ==========================================================
+
+edge_accumulator <- list()
+
+candidates <- unique(df_long$file)
+
+for (cand in candidates) {
+  nodes_cand <- sort(unique(df_long$node[df_long$file == cand]))
+  
+  # Create all pairwise combinations for this candidate
+  if (length(nodes_cand) > 1) {
+    comb <- combn(nodes_cand, 2)
+    for (j in seq_len(ncol(comb))) {
+      edge_accumulator[[length(edge_accumulator) + 1]] <- data.frame(
+        from = comb[1, j],
+        to   = comb[2, j],
+        stringsAsFactors = FALSE
+      )
+    }
+  }
+}
+
+edges <- bind_rows(edge_accumulator)
+
+# Weight edges by co-occurrence frequency
+edges_weighted <- edges %>%
+  count(from, to, name = "weight") %>%
+  mutate(weight_norm = weight / max(weight)) %>%
+  arrange(desc(weight))
+
+cat("Total unique edges:", nrow(edges_weighted), "\n")
+
+# ==========================================================
+# 5. NODE TABLE (SAME STRUCTURE AS ARTICLES)
+# ==========================================================
+
+nodes <- df_long %>%
+  select(node, topic, sentiment, opinion) %>%
+  distinct() %>%
+  arrange(topic, sentiment)
+
+cat("Total nodes:", nrow(nodes), "\n")
+
+# ==========================================================
+# 6. SAVE FILES (MATCHING YOUR STRUCTURE)
+# ==========================================================
+
+# Create directory if it doesn't exist
+dir.create("/work/pilot/data/processed/networks", recursive = TRUE, showWarnings = FALSE)
+
+write.csv(
+  edges_weighted,
+  "/work/pilot/data/processed/networks/kandidat_topic_sentiment_edges.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  nodes,
+  "/work/pilot/data/processed/networks/kandidat_topic_sentiment_nodes.csv",
+  row.names = FALSE
+)
+
+write.csv(
+  df_long,
+  "/work/pilot/data/processed/networks/kandidat_with_nodes.csv",
+  row.names = FALSE
+)
+
+cat("✓ Kandidattest network files saved\n")
+
+# ==========================================================
+# 7. NETWORK SUMMARY
+# ==========================================================
+
+g <- graph_from_data_frame(edges_weighted, vertices = nodes, directed = FALSE)
+
+cat("\nKANDIDATTEST NETWORK SUMMARY\n")
+cat("========================================\n")
+cat("Nodes:", vcount(g), "\n")
+cat("Edges:", ecount(g), "\n")
+cat("Density:", edge_density(g), "\n")
+cat("Mean edge weight:", mean(E(g)$weight), "\n")
+cat("Max edge weight:", max(E(g)$weight), "\n")
+
+# Show top 10 strongest connections
+cat("\nTop 10 strongest topic-sentiment connections:\n")
+print(head(edges_weighted, 10))
+
+# Show node distribution
+cat("\nNode distribution by sentiment:\n")
+nodes %>%
+  count(sentiment) %>%
+  print()
+
+```
+
+
+```{r}
+
+############################################################
+# COMPLETE KANDIDATTEST NETWORK VISUALIZATIONS
+# All visualizations in one file
+############################################################
+
+library(igraph)
+library(ggraph)
+library(tidygraph)
+library(tidyverse)
+library(scales)
+
+# ==========================================================
+# LOAD KANDIDATTEST NETWORK DATA
+# ==========================================================
+
+edges <- read.csv(
+  "/work/pilot/data/processed/networks/kandidat_topic_sentiment_edges.csv",
+  stringsAsFactors = FALSE
+)
+
+nodes <- read.csv(
+  "/work/pilot/data/processed/networks/kandidat_topic_sentiment_nodes.csv",
+  stringsAsFactors = FALSE
+)
+
+# Build graph object
+g <- graph_from_data_frame(
+  d = edges,
+  vertices = nodes,
+  directed = FALSE
+)
+
+cat("Kandidattest Network Summary:\n")
+cat(" Nodes:", vcount(g), "\n")
+cat(" Edges:", ecount(g), "\n")
+cat(" Density:", edge_density(g), "\n\n")
+
+# ==========================================================
+# VISUAL SETTINGS (USED BY ALL PLOTS)
+# ==========================================================
+
+sentiment_colors <- c(
+  "negative" = "#E74C3C",
+  "neutral"  = "#95A5A6",
+  "positive" = "#2ECC71"
+)
+
+# Node size = frequency
+node_freq <- nodes %>%
+  count(node, name = "freq")
+
+V(g)$freq <- node_freq$freq[match(V(g)$name, node_freq$node)]
+
+# ==========================================================
+# VISUALIZATION 1: FORCE-DIRECTED NETWORK
+# ==========================================================
+
+set.seed(123)
+
+p1 <- ggraph(g, layout = "fr") +
+  geom_edge_link(
+    aes(width = weight_norm, alpha = weight_norm),
+    color = "grey60"
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      size = freq
+    )
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3,
+    color = "black",
+    repel = TRUE
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.3, 3)) +
+  scale_edge_alpha(range = c(0.2, 0.8)) +
+  scale_size_continuous(range = c(3, 10)) +
+  theme_graph() +
+  labs(
+    title = "Kandidattest Topic–Sentiment Co-occurrence Network",
+    subtitle = "Edges = co-occurrence across candidates (normalized)",
+    color = "Sentiment",
+    size = "Candidate frequency"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/kandidat_network_force.png",
+  p1,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Force-directed network saved\n")
+
+# ==========================================================
+# VISUALIZATION 2: CIRCULAR LAYOUT
+# ==========================================================
+
+p2 <- ggraph(g, layout = "linear", circular = TRUE) +
+  geom_edge_arc(
+    aes(width = weight_norm, alpha = weight_norm),
+    color = "grey60"
+  ) +
+  geom_node_point(
+    aes(color = sentiment),
+    size = 6
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 2.5,
+    vjust = 1.5
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.2, 2)) +
+  scale_edge_alpha(range = c(0.2, 0.7)) +
+  theme_graph() +
+  labs(
+    title = "Kandidattest Topic–Sentiment Network (Circular)",
+    color = "Sentiment"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/kandidat_network_circular.png",
+  p2,
+  width = 12,
+  height = 12,
+  dpi = 300
+)
+
+cat(" Circular network saved\n")
+
+# ==========================================================
+# VISUALIZATION 3: COMMUNITIES (IDEOLOGICAL BLOCS)
+# ==========================================================
+
+communities <- cluster_louvain(g)
+V(g)$community <- membership(communities)
+
+cat("Number of communities detected:", max(V(g)$community), "\n\n")
+
+p3 <- ggraph(g, layout = "fr") +
+  geom_edge_link(
+    aes(width = weight_norm),
+    alpha = 0.3,
+    color = "grey70"
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      shape = as.factor(community)
+    ),
+    size = 6
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3,
+    repel = TRUE
+  ) +
+  scale_color_manual(values = sentiment_colors) +
+  scale_edge_width(range = c(0.3, 3)) +
+  theme_graph() +
+  labs(
+    title = "Kandidattest Topic–Sentiment Communities",
+    subtitle = "Ideological clusters in candidate opinion structure",
+    color = "Sentiment",
+    shape = "Structural cluster"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave(
+  "/work/pilot/data/processed/networks/kandidat_network_communities.png",
+  p3,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Community network saved\n")
+
+# ==========================================================
+# VISUALIZATION 4: FULL HEATMAP (30x30)
+# ==========================================================
+
+# Keep strong connections
+edges_plot <- edges %>%
+  filter(weight_norm > 0.05)
+
+# Create symmetric matrix
+matrix_df <- edges_plot %>%
+  select(from, to, weight_norm) %>%
+  bind_rows(
+    edges_plot %>%
+      transmute(from = to, to = from, weight_norm = weight_norm)
+  )
+
+# Add diagonal
+all_nodes <- unique(nodes$node)
+diagonal_df <- data.frame(
+  from = all_nodes,
+  to = all_nodes,
+  weight_norm = 1.0
+)
+
+matrix_df <- bind_rows(matrix_df, diagonal_df) %>%
+  distinct(from, to, .keep_all = TRUE)
+
+# Order nodes
+sentiment_order <- c("negative", "neutral", "positive")
+
+node_order <- nodes %>%
+  arrange(topic, match(sentiment, sentiment_order)) %>%
+  pull(node)
+
+matrix_df <- matrix_df %>%
+  mutate(
+    from = factor(from, levels = node_order),
+    to   = factor(to,   levels = node_order)
+  ) %>%
+  filter(!is.na(from) & !is.na(to))
+
+# Plot heatmap
+p4 <- ggplot(matrix_df, aes(x = from, y = to, fill = weight_norm)) +
+  geom_tile(color = "white", linewidth = 0.2) +
+  scale_fill_gradient2(
+    low = "#3B4CC0",
+    mid = "#F7F7F7", 
+    high = "#B40426",
+    midpoint = 0.5,
+    name = "Alignment\nstrength",
+    limits = c(0, 1),
+    breaks = c(0, 0.25, 0.5, 0.75, 1.0)
+  ) +
+  coord_fixed() +
+  theme_minimal(base_size = 10) +
+  theme(
+    axis.text.x = element_text(
+      angle = 90,
+      vjust = 0.5,
+      hjust = 1,
+      size = 7
+    ),
+    axis.text.y = element_text(size = 7),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "Kandidattest Topic–Sentiment Co-occurrence Matrix",
+    subtitle = "Normalized symmetric co-occurrence across candidates"
+  )
+
+ggsave(
+  "/work/pilot/data/processed/networks/kandidat_network_heatmap.png",
+  p4,
+  width = 14,
+  height = 12,
+  dpi = 300
+)
+
+cat(" Full heatmap saved\n")
+
+# ==========================================================
+# VISUALIZATION 5: PRETTY NETWORK (PUBLICATION-READY)
+# ==========================================================
+
+# Filter for cleaner visualization
+edges_clean <- edges %>%
+  filter(weight_norm >= 0.15)
+
+g_clean <- graph_from_data_frame(
+  d = edges_clean,
+  vertices = nodes,
+  directed = FALSE
+)
+
+V(g_clean)$freq <- node_freq$freq[match(V(g_clean)$name, node_freq$node)]
+
+sentiment_colors_clean <- c(
+  "negative" = "#D55E00",
+  "neutral"  = "#999999",
+  "positive" = "#009E73"
+)
+
+set.seed(42)
+
+p5 <- ggraph(g_clean, layout = "stress") +
+  geom_edge_link(
+    aes(
+      width = weight_norm,
+      alpha = weight_norm
+    ),
+    colour = "grey50",
+    show.legend = FALSE
+  ) +
+  geom_node_point(
+    aes(
+      color = sentiment,
+      size = freq
+    ),
+    alpha = 0.9
+  ) +
+  geom_node_text(
+    aes(label = paste0("T", topic)),
+    size = 3.5,
+    repel = TRUE,
+    segment.alpha = 0.3
+  ) +
+  scale_color_manual(values = sentiment_colors_clean) +
+  scale_edge_width(range = c(0.4, 3)) +
+  scale_edge_alpha(range = c(0.2, 0.9)) +
+  scale_size_continuous(range = c(4, 10)) +
+  theme_graph(base_family = "sans") +
+  labs(
+    title = "Kandidattest Topic–Sentiment Co-occurrence Network",
+    subtitle = "Ideological structure of candidate opinions",
+    color = "Sentiment",
+    size = "Candidate frequency"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold")
+  )
+
+ggsave(
+  "/work/pilot/data/processed/networks/kandidat_network_pretty.png",
+  p5,
+  width = 12,
+  height = 10,
+  dpi = 300
+)
+
+cat(" Pretty network saved\n")
+
+
+print(p1)
+print(p2)
+print(p3)
+print(p4)
+print(p5)
+```
+
