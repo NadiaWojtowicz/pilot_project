@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-12-19"
+---
+```{r}
+library(tidyverse)
+
+# Read in the file with topic columns
+all_articles <- read_csv("/work/pilot/data/clean/all_articles_with_topics.csv")
+
+# Filter to keep only articles that mention at least one topic
+articles_with_hits <- all_articles %>%
+  filter(if_any(starts_with("topic_"), ~ . == 1))
+
+# Save the filtered articles
+write_csv(articles_with_hits, "/work/pilot/data/processed/articles_with_hits.csv")
+
+# Create topic-specific files
+output_dir <- "/work/pilot/data/processed/split_topics"
+
+for (i in 1:10) {
+  col_name <- paste0("topic_", i)
+  
+  # Filter articles where this topic is 1
+  topic_articles <- articles_with_hits %>%
+    filter(.data[[col_name]] == 1)
+  
+  # Only save if there are articles for this topic
+  if (nrow(topic_articles) > 0) {
+    filename <- file.path(output_dir, paste0("topic_", i, "_articles.csv"))
+    write_csv(topic_articles, filename)
+    cat("Created", filename, "with", nrow(topic_articles), "articles\n")
+  } else {
+    cat("No articles for topic", i, "\n")
+  }
+}
+
+
+nrow(articles_with_hits)
+
+```
+

@@ -1,0 +1,28 @@
+---
+title: "clean_translation"
+output: html_document
+date: "2025-12-20"
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+```
+
+```{r}
+#read in the data with translated rows
+df1 <- read.csv("/work/pilot/data/processed/articles_with_hits.csv")
+```
+
+```{r}
+#save only collumns that are important
+df1 <- df1 %>%
+  select(file, text, topic_1:topic_10, eng_text)
+
+```
+
+```{r}
+#save as csv file 
+write_csv(df1, "/work/pilot/data/processed/articles_for_label.csv")
+```
+

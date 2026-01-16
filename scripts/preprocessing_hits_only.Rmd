@@ -1,0 +1,94 @@
+---
+title: "preprocessing_for_translation"
+output: html_document
+date: "2025-12-10"
+---
+
+```{r library}
+library(readr)
+library(dplyr)
+```
+
+```{r load in the data}
+
+full_articles <- read_csv("/work/pilot/data/clean/clean_articles.csv")
+
+processed_topics <- read_csv("/work/pilot/data/processed/all_topics_split.csv")
+```
+
+```{r}
+#add id collumns
+full_articles <- full_articles %>%
+mutate(id = row_number(), .before = 1)  # Add as first column
+
+#save as a csv 
+write_csv(full_articles, "/work/pilot/data/clean/all_articles_IDs.csv")
+
+cat(" MERGED:", nrow(full_articles), "articles\n")
+
+id_all_articles <- read.csv("/work/pilot/data/clean/all_articles_IDs.csv")
+```
+
+```{r}
+
+# Drop 'part_text' and add 'text' instead
+processed_topics <- processed_topics %>%
+  select(-text_excerpt) %>%
+  left_join(id_all_articles %>% select(id, text), by = "id") %>%
+  relocate(text, .after = url)
+
+```
+
+```{r}
+
+#filter out rows with no hits
+hits_only <- processed_topics %>%
+filter(if_any(starts_with("topic_"), ~ . == 1))
+
+#save as a csv file
+write_csv(hits_only, "/work/pilot/data/processed/hits_only_data.csv")
+
+cat(" Original:", nrow(processed_topics), "articles\n")
+cat(" With hits:", nrow(hits_only), "articles\n")
+```
+
+```{r}
+
+#count the topics per article
+df_summary <- hits_only %>%
+rowwise() %>%
+mutate(num_topics = sum(c_across(starts_with("topic_")) == 1)) %>%
+ungroup() %>%
+count(num_topics, name = "num_articles")
+
+print(df_summary)
+
+cat("\n ARTICLES BY TOPIC COUNT:\n")
+for (i in 1:nrow(df_summary)) {
+topics <- df_summary$num_topics[i]
+articles <- df_summary$num_articles[i]
+pct <- round(articles / nrow(hits_only) * 100, 1)
+cat(sprintf("%d topic(s):  %4d articles (%5.1f%%)\n", topics, articles, pct))
+}
+cat("\nTotal hits: ", nrow(hits_only), " articles\n")
+```
+
+```{r}
+
+#split into 10 topic-specific files
+for (i in 1:10) {
+topic_col <- paste0("topic_", i)
+#create data frame
+df_topic <- hits_only %>%
+filter(!!sym(topic_col) == 1)
+#save the output as a csv
+output_file <- paste0("/work/pilot/data/processed/topic_splits/topic_", i, "_articles.csv")
+write_csv(df_topic, output_file)
+
+cat(sprintf("Topic %2d: %4d articles → %s\n", i, nrow(df_topic), output_file))
+}
+
+cat("Each CSV contains ALL columns (id, url, text, topic_1...topic_10, model_output)\n")
+cat("Articles with multiple topics appear in multiple CSVs with SAME id\n")
+```
+

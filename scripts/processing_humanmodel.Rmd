@@ -1,0 +1,236 @@
+---
+title: "preprocessing"
+output: html_document
+date: "2026-01-03"
+---
+
+```{r}
+library(jsonlite)
+library(dplyr)
+
+#load in JSON file
+json_text <- readLines("/work/pilot/data/processed/human_lable.json", warn = FALSE)
+raw_data <- fromJSON(json_text, simplifyVector = FALSE)
+
+# function to get label from annotations
+get_label <- function(item) {
+  if (!is.null(item$annotations) && length(item$annotations) > 0) {
+    if (!is.null(item$annotations[[1]]$result) && length(item$annotations[[1]]$result) > 0) {
+      choices <- item$annotations[[1]]$result[[1]]$value$choices
+      if (!is.null(choices) && length(choices) > 0) {
+        return(choices[[1]])
+      }
+    }
+  }
+  return(NA)
+}
+
+# label for each element
+labels <- sapply(raw_data, get_label)
+
+# create dataframe with collumns
+df <- data.frame(
+  file = sapply(raw_data, function(x) x$data$file),
+  text = sapply(raw_data, function(x) ifelse(is.null(x$data$text), NA, x$data$text)),
+  eng_text = sapply(raw_data, function(x) ifelse(is.null(x$data$eng_text), NA, x$data$eng_text)),
+  topic_1 = sapply(raw_data, function(x) x$data$topic_1),
+  topic_2 = sapply(raw_data, function(x) x$data$topic_2),
+  topic_3 = sapply(raw_data, function(x) x$data$topic_3),
+  topic_4 = sapply(raw_data, function(x) x$data$topic_4),
+  topic_5 = sapply(raw_data, function(x) x$data$topic_5),
+  topic_6 = sapply(raw_data, function(x) x$data$topic_6),
+  topic_7 = sapply(raw_data, function(x) x$data$topic_7),
+  topic_8 = sapply(raw_data, function(x) x$data$topic_8),
+  topic_9 = sapply(raw_data, function(x) x$data$topic_9),
+  topic_10 = sapply(raw_data, function(x) x$data$topic_10),
+  stringsAsFactors = FALSE
+)
+
+# add collumns with starting value 0
+df$pred_topic_1 <- 0
+df$pred_topic_2 <- 0
+df$pred_topic_3 <- 0
+df$pred_topic_4 <- 0
+df$pred_topic_5 <- 0
+df$pred_topic_6 <- 0
+df$pred_topic_7 <- 0
+df$pred_topic_8 <- 0
+df$pred_topic_9 <- 0
+df$pred_topic_10 <- 0
+df$none <- 0
+
+# values for these collumns based on labels
+for (i in 1:nrow(df)) {
+  label <- labels[i]
+  if (!is.na(label)) {
+    if (label == "none") {
+      df$none[i] <- 1
+    } else if (label %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")) {
+      col_name <- paste0("pred_topic_", label)
+      df[[col_name]][i] <- 1
+    }
+  }
+}
+
+# check the structure
+cat("data frame:", nrow(df), "rows,", ncol(df), "collumns\n")
+print(head(df))
+
+cat("\nlabels:\n")
+cat("none:", sum(df$none), "\n")
+for (i in 1:10) {
+  cat("pred_topic_", i, ": ", sum(df[[paste0("pred_topic_", i)]]), "\n", sep = "")
+}
+
+
+
+```
+
+```{r}
+# delete duplicates
+df <- df %>% 
+  distinct(file, .keep_all = TRUE)
+
+cat("DF after deleting:", nrow(df), "rows\n")
+
+# load in label2.csv (file with articles from 1st LLM annotation)
+label2 <- read.csv("/work/pilot/data/processed/label2.csv", stringsAsFactors = FALSE)
+
+cat("\n label2.csv:", nrow(label2), "rows\n")
+
+label2 <- label2 %>%
+  rename(file = url)
+
+# check for files in label2 that do not appear in df
+files_to_add <- label2 %>%
+  filter(!file %in% df$file)
+
+cat("new rows:", nrow(files_to_add), "\n")
+
+# add new rows to df
+if (nrow(files_to_add) > 0) {
+  df <- bind_rows(df, files_to_add)
+}
+
+cat("df:", nrow(df), "rows,", ncol(df), "collumns\n")
+
+cat("\n df:\n")
+cat("none:", sum(df$none, na.rm = TRUE), "\n")
+for (i in 1:10) {
+  cat("pred_topic_", i, ": ", sum(df[[paste0("pred_topic_", i)]], na.rm = TRUE), "\n", sep = "")
+}
+
+```
+
+```{r}
+# Usuń wszystkie wiersze gdzie none == 1
+df <- df %>%
+  filter(none != 1)
+
+cat("\ndf now:\n")
+cat("none:", sum(df$none, na.rm = TRUE), "\n")
+for (i in 1:10) {
+  cat("pred_topic_", i, ": ", sum(df[[paste0("pred_topic_", i)]], na.rm = TRUE), "\n", sep = "")
+}
+
+```
+
+```{r}
+
+#count the topics per article
+clean_sum <- df %>%
+rowwise() %>%
+mutate(num_topics = sum(c_across(starts_with("topic_")) == 1)) %>%
+ungroup() %>%
+count(num_topics, name = "num_articles")
+
+print(clean_sum)
+
+cat("\n ARTICLES BY TOPIC COUNT:\n")
+for (i in 1:nrow(clean_sum)) {
+topics <- clean_sum$num_topics[i]
+articles <- clean_sum$num_articles[i]
+pct <- round(articles / nrow(df) * 100, 1)
+cat(sprintf("%d topic(s):  %4d articles (%5.1f%%)\n", topics, articles, pct))
+}
+cat("\nTotal hits: ", nrow(df), " articles\n")
+```
+
+```{r}
+# Keep only specified columns
+clean_df <- df %>%
+  select(
+    file,
+    text,
+    eng_text,
+    pred_topic_1,
+    pred_topic_2,
+    pred_topic_3,
+    pred_topic_4,
+    pred_topic_5,
+    pred_topic_6,
+    pred_topic_7,
+    pred_topic_8,
+    pred_topic_9,
+    pred_topic_10
+  )
+
+# Check result
+cat("Clean df dimensions:", nrow(clean_df), "rows,", ncol(clean_df), "columns\n")
+print(head(clean_df))
+
+write.csv(clean_df, "/work/pilot/data/processed/cleaned_data_no_none.csv", row.names = FALSE)
+
+
+```
+
+
+```{r}
+# Summary table
+topic_counts <- data.frame(
+  Topic = paste0("pred_topic_", 1:10),
+  Count = sapply(1:10, function(i) sum(clean_df[[paste0("pred_topic_", i)]]))
+)
+
+print(topic_counts)
+
+# Total
+cat("\nTotal labels across all topics:", sum(topic_counts$Count), "\n")
+
+```
+
+```{r}
+# Create histogram of human labels
+library(ggplot2)
+
+# Prepare data for histogram
+topic_counts <- data.frame(
+  Topic = 1:10,
+  Count = sapply(1:10, function(i) sum(clean_df[[paste0("pred_topic_", i)]]))
+)
+
+# Create histogram
+ggplot(topic_counts, aes(x = Topic, y = Count)) +
+  geom_bar(stat = "identity", fill = "steelblue", color = "black") +
+  scale_x_continuous(breaks = 1:10) +
+  labs(
+    title = "Distribution of Topics",
+    x = "Topic Number",
+    y = "Number of Articles"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.text = element_text(size = 11)
+  )
+
+# Save plot
+ggsave(
+  "/work/pilot/data/processed/human_labels_histogram.png",
+  width = 10,
+  height = 6,
+  dpi = 300
+)
+
+```
+

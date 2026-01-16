@@ -1,0 +1,59 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-12-19"
+---
+
+```{r}
+library(tidyverse)
+
+# Read in the main file
+all_articles <- read_csv("/work/pilot/data/clean/clean_articles.csv")
+
+# Initialize topic columns (topic_1 to topic_10) with 0s
+all_articles <- all_articles %>%
+  mutate(topic_1 = 0,
+         topic_2 = 0,
+         topic_3 = 0,
+         topic_4 = 0,
+         topic_5 = 0,
+         topic_6 = 0,
+         topic_7 = 0,
+         topic_8 = 0,
+         topic_9 = 0,
+         topic_10 = 0)
+
+# Define topic file paths mapped to the correct topic numbers
+topic_files <- list(
+  list(file = "/work/pilot/data/clean/topics/all_privatization_articles.csv", topic_num = 1),
+  list(file = "/work/pilot/data/clean/topics/budget_savings_articles_results.csv", topic_num = 2),
+  list(file = "/work/pilot/data/clean/topics/municipal_tax_articles_results.csv", topic_num = 3),
+  list(file = "/work/pilot/data/clean/topics/business_costs_articles_results.csv", topic_num = 4),
+  # topic 5: ethnicity/social background mixing - no file
+  # topic 6: mosques - no file
+  list(file = "/work/pilot/data/clean/topics/topic3_parking_spaces.csv", topic_num = 7),
+  list(file = "/work/pilot/data/clean/topics/topic4_harbor_expansion.csv", topic_num = 8),
+  list(file = "/work/pilot/data/clean/topics/topic5_traffic_limitations.csv", topic_num = 9),
+  list(file = "/work/pilot/data/clean/topics/topic6_stadium_kongelunden.csv", topic_num = 10)
+)
+
+# Loop through each topic file and mark matches
+for (topic_info in topic_files) {
+  # Read the topic file
+  topic_data <- read_csv(topic_info$file)
+  
+  # Get the article_ids from this topic file
+  topic_article_ids <- topic_data$article_id
+  
+  # Create the column name
+  col_name <- paste0("topic_", topic_info$topic_num)
+  
+  # Set to 1 where file column matches article_ids from topic file
+  all_articles <- all_articles %>%
+    mutate(!!col_name := ifelse(file %in% topic_article_ids, 1, 0))
+}
+
+# Write the result
+write_csv(all_articles, "/work/pilot/data/clean/all_articles_with_topics.csv")
+```
+
