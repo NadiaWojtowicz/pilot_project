@@ -1,0 +1,1510 @@
+[
+  {
+    "topic": 1,
+    "sentiment": "negative",
+    "marginal_probability": 0.0833,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 1,
+    "sentiment": "neutral",
+    "marginal_probability": 0.75,
+    "conditionals": [
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 1,
+    "sentiment": "positive",
+    "marginal_probability": 0.1667,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "negative",
+    "marginal_probability": 0.8,
+    "conditionals": [
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "neutral",
+    "marginal_probability": 0.2,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "negative",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "neutral",
+    "marginal_probability": 0.6667,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "positive",
+    "marginal_probability": 0.3333,
+    "conditionals": [
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "negative",
+    "marginal_probability": 1,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "negative",
+    "marginal_probability": 1,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 6,
+    "sentiment": "negative",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": []
+  },
+  {
+    "topic": 6,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": []
+  },
+  {
+    "topic": 6,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": []
+  },
+  {
+    "topic": 7,
+    "sentiment": "negative",
+    "marginal_probability": 1,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6667,
+        "n_obs": 3
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0.3333,
+        "n_obs": 3
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 3
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 7,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 7,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "negative",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "neutral",
+    "marginal_probability": 1,
+    "conditionals": [
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 2
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "negative",
+    "marginal_probability": 0.2857,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "neutral",
+    "marginal_probability": 0.2857,
+    "conditionals": [
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "positive",
+    "marginal_probability": 0.4286,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 10
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "negative",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "neutral",
+    "marginal_probability": 1,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0.5,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 1,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 2
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 1,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 1
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0,
+        "n_obs": 1
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "positive",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1
+      },
+      {
+        "topic_j": 4
+      },
+      {
+        "topic_j": 3
+      },
+      {
+        "topic_j": 9
+      },
+      {
+        "topic_j": 7
+      },
+      {
+        "topic_j": 2
+      },
+      {
+        "topic_j": 5
+      },
+      {
+        "topic_j": 8
+      }
+    ]
+  }
+]

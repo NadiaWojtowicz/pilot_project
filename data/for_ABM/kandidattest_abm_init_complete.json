@@ -1,0 +1,4582 @@
+[
+  {
+    "topic": 1,
+    "sentiment": "negative",
+    "marginal_probability": 0.3935,
+    "conditionals": [
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8197,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1803,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8852,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1148,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5246,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4754,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0984,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9016,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3279,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6721,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0328,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9672,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0328,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9672,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1475,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8525,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4426,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5574,
+        "n_obs": 61
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 2,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3546
+      }
+    ]
+  },
+  {
+    "topic": 1,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 2,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3546
+      }
+    ]
+  },
+  {
+    "topic": 1,
+    "sentiment": "positive",
+    "marginal_probability": 0.6065,
+    "conditionals": [
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.383,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.617,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4468,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5532,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5106,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4894,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8404,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1596,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8617,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1383,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6277,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3723,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7766,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2234,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7234,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2766,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1277,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8723,
+        "n_obs": 94
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 2,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3546
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "negative",
+    "marginal_probability": 0.5548,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5814,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4186,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7674,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2326,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5581,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4419,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.314,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.686,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5814,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4186,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2442,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7558,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3256,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6744,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.314,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.686,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3372,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 86
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6628,
+        "n_obs": 86
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.2202
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.2202
+      }
+    ]
+  },
+  {
+    "topic": 2,
+    "sentiment": "positive",
+    "marginal_probability": 0.4452,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1594,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8406,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4348,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5652,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4638,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5362,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8406,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1594,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7391,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2609,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5797,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4203,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6812,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3188,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7246,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2754,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1449,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 69
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8551,
+        "n_obs": 69
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4293
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.2202
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "negative",
+    "marginal_probability": 0.6194,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5625,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4375,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6875,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3125,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4167,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5833,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3542,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6458,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5312,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4688,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2188,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7812,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3229,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6771,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3125,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6875,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3542,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 96
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6458,
+        "n_obs": 96
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3015
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3015
+      }
+    ]
+  },
+  {
+    "topic": 3,
+    "sentiment": "positive",
+    "marginal_probability": 0.3806,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1186,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8814,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.339,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.661,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.678,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.322,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8644,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1356,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8475,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1525,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.678,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.322,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7458,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2542,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7966,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2034,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0847,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 59
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9153,
+        "n_obs": 59
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.4411
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.3405
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 10,
+        "correlation": 0.3015
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "negative",
+    "marginal_probability": 0.5161,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.575,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.425,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4375,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5625,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.55,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.45,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1625,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8375,
+        "n_obs": 80
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2121
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2121
+      }
+    ]
+  },
+  {
+    "topic": 4,
+    "sentiment": "positive",
+    "marginal_probability": 0.4839,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3867,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6133,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5067,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4933,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7467,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2533,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.52,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.48,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3467,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6533,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4667,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5333,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.44,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.56,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3467,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6533,
+        "n_obs": 75
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.0136
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.0939
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.2539
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2121
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "negative",
+    "marginal_probability": 0.5484,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0706,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9294,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3176,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6824,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5412,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4588,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8235,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1765,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6941,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3059,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7882,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2118,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7882,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2118,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1176,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 85
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8824,
+        "n_obs": 85
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3402
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3402
+      }
+    ]
+  },
+  {
+    "topic": 5,
+    "sentiment": "positive",
+    "marginal_probability": 0.4516,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7857,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2143,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8429,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1571,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8857,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1143,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4857,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5143,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4429,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5571,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0286,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9714,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1143,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8857,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1429,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8571,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4143,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 70
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5857,
+        "n_obs": 70
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7285
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.5259
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4978
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0552
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3402
+      }
+    ]
+  },
+  {
+    "topic": 6,
+    "sentiment": "negative",
+    "marginal_probability": 0.6516,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.198,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.802,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.495,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.505,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.505,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.495,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5545,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4455,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6931,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3069,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5347,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4653,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6832,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3168,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6139,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3861,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2079,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 101
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7921,
+        "n_obs": 101
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.1377
+      }
+    ]
+  },
+  {
+    "topic": 6,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.1377
+      }
+    ]
+  },
+  {
+    "topic": 6,
+    "sentiment": "positive",
+    "marginal_probability": 0.3484,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7593,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2407,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6667,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3333,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8333,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1667,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4444,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5556,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2778,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7222,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1296,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8704,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1111,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8889,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2778,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7222,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3333,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 54
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6667,
+        "n_obs": 54
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5474
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.1645
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.3222
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1049
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.3976
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.1377
+      }
+    ]
+  },
+  {
+    "topic": 7,
+    "sentiment": "negative",
+    "marginal_probability": 0.3935,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0328,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9672,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3443,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6557,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3443,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6557,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5738,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4262,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.9672,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.0328,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8852,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1148,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8197,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1803,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.9344,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.0656,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.082,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 61
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.918,
+        "n_obs": 61
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3149
+      }
+    ]
+  },
+  {
+    "topic": 7,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3149
+      }
+    ]
+  },
+  {
+    "topic": 7,
+    "sentiment": "positive",
+    "marginal_probability": 0.6065,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6277,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3723,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6915,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3085,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7979,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2021,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4787,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5213,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2766,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7234,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.266,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.734,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2128,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7872,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3617,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 94
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6383,
+        "n_obs": 94
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5949
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3413
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4564
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0929
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.678
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.395
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3149
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "negative",
+    "marginal_probability": 0.4839,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0267,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9733,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3733,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6267,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4133,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5867,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5333,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4667,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8933,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1067,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.92,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.08,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6667,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3333,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.72,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.28,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1067,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 75
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8933,
+        "n_obs": 75
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3234
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3234
+      }
+    ]
+  },
+  {
+    "topic": 8,
+    "sentiment": "positive",
+    "marginal_probability": 0.5161,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7375,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2625,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.725,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.275,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8125,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1875,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.225,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.775,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1375,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8625,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2875,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7125,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3875,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 80
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6125,
+        "n_obs": 80
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.7271
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.3536
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4108
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.0333
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6711
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.5454
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.5413
+      },
+      {
+        "topic_j": 9,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.3234
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "negative",
+    "marginal_probability": 0.4968,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1169,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8831,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3506,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6494,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3896,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6104,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5714,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4286,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8701,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1299,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8052,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1948,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7403,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2597,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7013,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2987,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1299,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 77
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8701,
+        "n_obs": 77
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2787
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2787
+      }
+    ]
+  },
+  {
+    "topic": 9,
+    "sentiment": "positive",
+    "marginal_probability": 0.5032,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6667,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3333,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7564,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2436,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8462,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1538,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4615,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5385,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2308,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7692,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.0513,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.9487,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2692,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7308,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3718,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 78
+      },
+      {
+        "topic_predicted": 10,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6282,
+        "n_obs": 78
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": -0.5627
+      },
+      {
+        "topic_j": 2,
+        "correlation": -0.4082
+      },
+      {
+        "topic_j": 3,
+        "correlation": -0.4701
+      },
+      {
+        "topic_j": 4,
+        "correlation": 0.1099
+      },
+      {
+        "topic_j": 5,
+        "correlation": 0.6424
+      },
+      {
+        "topic_j": 6,
+        "correlation": 0.3203
+      },
+      {
+        "topic_j": 7,
+        "correlation": 0.7051
+      },
+      {
+        "topic_j": 8,
+        "correlation": 0.4323
+      },
+      {
+        "topic_j": 10,
+        "correlation": -0.2787
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "negative",
+    "marginal_probability": 0.2516,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6923,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3077,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.7436,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.2564,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.8718,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.1282,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.3333,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.6667,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2564,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7436,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5385,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4615,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.1282,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.8718,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2051,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7949,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2564,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 39
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7436,
+        "n_obs": 39
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.3546
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.2202
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3015
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2121
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.3402
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1377
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3149
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3234
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.2787
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "neutral",
+    "marginal_probability": 0,
+    "conditionals": [],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.3546
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.2202
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3015
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2121
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.3402
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1377
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3149
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3234
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.2787
+      }
+    ]
+  },
+  {
+    "topic": 10,
+    "sentiment": "positive",
+    "marginal_probability": 0.7484,
+    "conditionals": [
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.2931,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 1,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.7069,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4914,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 2,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5086,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5345,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 3,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4655,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5776,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 4,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4224,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6466,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 5,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3534,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.6897,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 6,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.3103,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.4828,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 7,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.5172,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5776,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 8,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4224,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "negative",
+        "prob_predicted": 0.5776,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "neutral",
+        "prob_predicted": 0,
+        "n_obs": 116
+      },
+      {
+        "topic_predicted": 9,
+        "sentiment_predicted": "positive",
+        "prob_predicted": 0.4224,
+        "n_obs": 116
+      }
+    ],
+    "correlations": [
+      {
+        "topic_j": 1,
+        "correlation": 0.3546
+      },
+      {
+        "topic_j": 2,
+        "correlation": 0.2202
+      },
+      {
+        "topic_j": 3,
+        "correlation": 0.3015
+      },
+      {
+        "topic_j": 4,
+        "correlation": -0.2121
+      },
+      {
+        "topic_j": 5,
+        "correlation": -0.3402
+      },
+      {
+        "topic_j": 6,
+        "correlation": -0.1377
+      },
+      {
+        "topic_j": 7,
+        "correlation": -0.3149
+      },
+      {
+        "topic_j": 8,
+        "correlation": -0.3234
+      },
+      {
+        "topic_j": 9,
+        "correlation": -0.2787
+      }
+    ]
+  }
+]
