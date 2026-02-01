@@ -380,3 +380,128 @@ Full statistical analysis including PCA, clustering, feature importance ranking,
 
 ---
 
+## 5. LLM-Based Topic Classification & Human Annotation Pipeline
+
+### LLM Model Selection
+
+**Model: Google Gemma 2 9B Instruct (`google/gemma-2-9b-it`)**
+
+Gemma 2 9B was selected for automated topic classification based on several criteria:
+
+- **Danish language proficiency**: Gemma 2 demonstrates robust performance on Danish text due to its multilingual training data and instruction-tuning, outperforming many comparably sized models on Danish NLU tasks
+- **Instruction-following capability**: The instruct-tuned variant reliably follows structured classification prompts with explicit rules, maintaining consistency across 1,323 articles
+- **Computational efficiency**: 9B parameter size balances classification accuracy with inference speed, enabling full-corpus processing within practical time and resource constraints
+- **Structured output generation**: Model architecture supports controlled response formats (comma-separated YES/NO sequences) required for automated parsing
+- **Multi-label binary classification**: Well-suited for independent evaluation of 10 binary classification decisions per article
+
+### Parallel Processing Architecture
+
+The full corpus (1,323 articles) was partitioned into 4 approximately equal chunks for distributed parallel processing:
+
+- **Chunk 1**: Articles 0–330 → `0_330_results.csv`
+- **Chunk 2**: Articles 331–661 → `331_661_results.csv`
+- **Chunk 3**: Articles 662–992 → `662_992_results.csv`
+- **Chunk 4**: Articles 993–1322 → `993_1322_results.csv`
+
+**Processing scripts**: Each chunk processed independently using identical Python notebooks (`class_chunk[RANGE].ipynb`) executing in separate Jupyter sessions on GPU infrastructure
+
+**Post-processing**: Four result files merged into `FINAL_1323_results.csv` with sequential ID regeneration (`clean_splitting_articles.Rmd`)
+
+### Classification Prompt Architecture
+
+The classification prompt employs a strict rule-based structure designed to maximize precision and minimize false positives:
+
+**Prompt components**:
+
+1. **Role assignment**: "Du er en præcis klassifikationsekspert" (You are a precise classification expert)
+
+2. **Decision heuristic**: "Svar kun JA hvis artiklen DIREKTE diskuterer det specifikke emne. Vær STRENG - hvis du er i tvivl, svar NEJ." (Answer YES only if the article DIRECTLY discusses the specific topic. Be STRICT—if uncertain, answer NO.)
+
+3. **Topic definitions**: 10 topics with explicit inclusion/exclusion criteria and contrastive examples:
+   - **Positive example**: Scenario triggering YES classification
+   - **Negative example**: Superficially similar scenario requiring NO classification
+   - Example (Topic 1 - Privatization):
+     - YES: "Kommunen overvejer at udlicitere hjemmeplejen til private" (Municipality considers outsourcing home care to private sector)
+     - NO: "Private virksomheder åbner i byen" (Private businesses open in the city)
+
+4. **Classification procedure**: Step-by-step instructions (read article → evaluate each topic independently → default to NO if ambiguous)
+
+5. **Output format specification**: Exactly 10 comma-separated responses (e.g., "NEJ, NEJ, JA, NEJ, NEJ, NEJ, NEJ, NEJ, NEJ, NEJ")
+
+**Design rationale**:
+- Conservative classification bias prioritizes precision over recall (minimizes false positives at cost of false negatives)
+- Contrastive examples disambiguate boundary cases and reduce semantic drift
+- Article truncation to 2,000 characters balances context preservation with model context window constraints
+
+**Output parsing logic** (`parse_sequence()` function):
+- Regex extraction of YES/NO tokens from model response
+- "JA" → 1, "NEJ" → 0
+- Sequences with <10 values padded with trailing zeros
+- Sequences with >10 values truncated to first 10
+- Unparseable responses default to all zeros with error logged in `model_output` column
+
+### Article Filtering Strategy
+
+Post-classification filtering retained only articles with at least one positive topic assignment:
+
+**Filtering condition**:
+```python
+filtered_df = df[df[['topic_1', ..., 'topic_10']].sum(axis=1) > 0]
+```
+
+**Rationale**:
+- Articles with zero topic matches do not address study-relevant policy domains
+- Reduces annotation workload by eliminating irrelevant articles before human review
+- Maintains all articles potentially containing target content for validation
+
+**Output**: `FINAL_hits_only.csv` (implemented in `clean_splitting_articles.Rmd`)
+
+### Human Annotation: Stage 1 (Topic Validation)
+
+**Platform**: Label Studio (open-source data labeling tool)
+
+**Annotation interface**:
+- **Input data**: Articles with LLM topic predictions and English translations
+- **Task type**: Single-choice selection from options {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, none}
+- **Display**: English-translated article text (`eng_text` column)
+- **Instructions**: Read article and select all applicable topic numbers; select "none" if no topics apply
+
+**Annotation workflow**:
+1. Annotator reads full English article
+2. Compares content against 10 topic definitions (identical to LLM prompt definitions)
+3. Selects topic ID(s) matching article content, or "none"
+4. Multiple topics annotated by creating separate annotations for same article
+5. Label Studio exports annotations as JSON (`human_lable.json`)
+
+**Post-annotation processing** (`processing_humanmodel.Rmd`):
+1. Parse Label Studio JSON to extract topic selections
+2. Convert selections to binary columns `pred_topic_1` through `pred_topic_10`
+3. Merge with LLM predictions by article filename
+4. **Filter "none" articles**: Remove all articles where annotator selected "none"
+5. Output: `cleaned_data_no_none.csv` (articles with ≥1 validated topic)
+
+**LLM-human agreement criterion**:
+- Articles retained for sentiment annotation only if LLM and human agreed on ≥1 topic
+- Disagreements resolved by keeping intersection of LLM and human topic sets
+- Ensures subsequent sentiment labels apply to validated topic classifications
+
+### Human Annotation: Stage 2 (Sentiment Annotation)
+
+**Annotation interface**:
+- **Input**: Articles from Stage 1 with validated topics
+- **Task type**: Single-choice classification with 30 labels (10 topics × 3 sentiments)
+- **Label encoding**: Label ID = `(topic - 1) × 3 + sentiment`, where sentiment ∈ {1=negative, 2=neutral, 3=positive}
+  - Example: Label 7 = Topic 3, Negative (since `(3-1)×3 + 1 = 7`)
+- **Display**: English-translated article
+
+**Sentiment definitions**:
+- **Negative**: Article criticizes, opposes, or frames topic unfavorably
+- **Neutral**: Article discusses topic factually without evaluative stance
+- **Positive**: Article supports, endorses, or frames topic favorably
+
+**Annotation procedure**:
+1. Annotator reads article
+2. Identifies validated topics (from Stage 1)
+3. For each topic, assesses overall sentiment expressed in article
+4. Selects corresponding label (1-30)
+5. Articles with multiple topics receive multiple annotations (one per topic-sentiment pair)
